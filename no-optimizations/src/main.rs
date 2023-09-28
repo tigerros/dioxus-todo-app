@@ -3,6 +3,7 @@
 #![warn(clippy::style)]
 #![warn(clippy::nursery)]
 
+use std::cmp::Ordering;
 use dioxus::prelude::*;
 use dioxus_elements::input_data::keyboard_types::Key;
 
