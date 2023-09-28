@@ -1,0 +1,33 @@
+name: Build
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Rust nightly
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: nightly
+          override: true
+          target: wasm32-unknown-unknown
+
+      - uses: Swatinem/rust-cache@v1
+
+      - name: Install CLI
+        run: cargo install dioxus-cli --locked
+
+      - name: Dioxus build
+        run: |
+          dx build --release --bin no-optimizations
+          dx build --release --bin stable-optimizations
+          dx build --release --bin all-optimizations

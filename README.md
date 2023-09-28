@@ -1,0 +1,2 @@
+**This is not meant to be used as an example of a TodoMVC app in Dioxus.**
+It's an app that was used to test WASM binary sizes for the Dioxus [Optimizing docs](https://dioxuslabs.com/learn/0.4/cookbook/optimizing).
