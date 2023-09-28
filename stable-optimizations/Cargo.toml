@@ -1,9 +1,9 @@
 [package]
 name = "stable-optimizations"
-version = { workspace = true }
-edition = { workspace = true }
+version = "0.1.0"
+edition = "2021"
 
 [dependencies]
-dioxus = { workspace = true }
-dioxus-web = { workspace = true }
-im-rc = { workspace = true }
+dioxus = "0.4.0"
+dioxus-web = "0.4.0"
+im-rc = "15.1.0"
