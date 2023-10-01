@@ -14,12 +14,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Rust nightly
+      - name: Setup Rust
         uses: actions-rs/toolchain@v1
         with:
+          profile: minimal
           toolchain: nightly
           override: true
-          target: wasm32-unknown-unknown
+          components: rust-src
+
+      - name: Add WASM target
+        run: rustup target add wasm32-unknown-unknown
 
       - uses: Swatinem/rust-cache@v1
 
